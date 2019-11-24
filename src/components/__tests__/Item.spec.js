@@ -26,4 +26,17 @@ describe('Item.vue', () => {
 
     expect(wrapper.find('a').text()).toBe(item.title)
   })
+
+  test('merender item.url sebagai atribut href untuk link judul', () => {
+    const item = {
+      url: '10'
+    }
+
+    // ini menyuplai input pada komponen dengan props pada saat mounting
+    const wrapper = shallowMount(Item, {
+      propsData: { item }
+    })
+
+    expect(wrapper.find('a').attributes().href).toBe(item.url)
+  })
 })
