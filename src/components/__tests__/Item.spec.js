@@ -2,41 +2,19 @@ import { shallowMount } from '@vue/test-utils'
 import Item from '../Item.vue'
 
 describe('Item.vue', () => {
-  test('merender item.url oleh komponen', () => {
-    const item = {
-      url: 10
-    }
-
-    // ini menyuplai input pada komponen dengan props pada saat mounting
-    const wrapper = shallowMount(Item, {
-      propsData: { item }
-    })
-
-    expect(wrapper.text()).toContain(item.url)
-  })
-
   test('merender link ke item.url dengan item.title sebagai judulnya', () => {
     const item = {
-      title: 'Hai'
+      url: 'http://github.com',
+      title: 'Hai, ini judul'
     }
 
     const wrapper = shallowMount(Item, {
       propsData: { item }
     })
 
-    expect(wrapper.find('a').text()).toBe(item.title)
-  })
+    const a = wrapper.find('a')
 
-  test('merender item.url sebagai atribut href untuk link judul', () => {
-    const item = {
-      url: '10'
-    }
-
-    // ini menyuplai input pada komponen dengan props pada saat mounting
-    const wrapper = shallowMount(Item, {
-      propsData: { item }
-    })
-
-    expect(wrapper.find('a').attributes().href).toBe(item.url)
+    expect(a.text()).toBe(item.title)
+    expect(a.attributes().href === item.url).toBe(true)
   })
 })

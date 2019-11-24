@@ -1,7 +1,7 @@
 <template>
   <li>
     <!-- Testing dengan find() -->
-    <a :href="item.url">{{ item.title }}</a>
+    <a>{{ item.title }}</a>
     {{ item.url }}
   </li>
 </template>
