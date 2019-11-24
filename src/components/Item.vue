@@ -1,6 +1,7 @@
 <template>
   <li>
-    <!-- untuk testing teks item.url -->
+    <!-- Testing dengan find() -->
+    <a>{{ item.title }}</a>
     {{ item.url }}
   </li>
 </template>

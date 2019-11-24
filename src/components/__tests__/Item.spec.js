@@ -2,7 +2,7 @@ import { shallowMount } from '@vue/test-utils'
 import Item from '../Item.vue'
 
 describe('Item.vue', () => {
-  test('renders item.url', () => {
+  test('merender item.url oleh komponen', () => {
     const item = {
       url: 10
     }
@@ -13,5 +13,17 @@ describe('Item.vue', () => {
     })
 
     expect(wrapper.text()).toContain(item.url)
+  })
+
+  test('merender link ke item.url dengan item.title sebagai judulnya', () => {
+    const item = {
+      title: 'Hai'
+    }
+
+    const wrapper = shallowMount(Item, {
+      propsData: { item }
+    })
+
+    expect(wrapper.find('a').text()).toBe(item.title)
   })
 })
