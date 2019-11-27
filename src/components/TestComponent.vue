@@ -1,6 +1,6 @@
 <template>
   <div>
-    <child testProp="some-value" />
+    <a href="https://google.com">Link</a>
   </div>
 </template>
 
