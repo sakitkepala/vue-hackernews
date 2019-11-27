@@ -1,3 +1,4 @@
 <template>
-  <div class="hidden">Progress Bar</div>
+  <div class="hidden"
+    :style='{ "width": "0%" }' />
 </template>
