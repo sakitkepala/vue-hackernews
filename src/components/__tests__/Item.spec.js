@@ -17,4 +17,18 @@ describe('Item.vue', () => {
     expect(a.text()).toBe(item.title)
     expect(a.attributes().href).toBe(item.url)
   })
+
+  test('merender "item.score" & "item.author"', () => {
+    const item = {
+      score: 53,
+      author: 'Mas Hafidz'
+    }
+
+    const wrapper = shallowMount(Item, {
+      propsData: { item }
+    })
+
+    expect(wrapper.text()).toContain(item.score)
+    expect(wrapper.text()).toContain(item.author)
+  })
 })
