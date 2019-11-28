@@ -1,6 +1,6 @@
 <template>
   <div>
-    <a href="https://google.com">Link</a>
+    <p style='color: red'>Paragraf</p>
   </div>
 </template>
 
